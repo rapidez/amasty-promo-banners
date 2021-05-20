@@ -1,0 +1,32 @@
+{
+    "name": "rapidez/amasty-promo-banners",
+    "description": "Rapidez Amasty Promo Banners",
+    "require": {
+        "php": "^7.4",
+        "illuminate/database": "^8.0",
+        "illuminate/support": "^8.0",
+        "illuminate/view": "^8.0"
+    },
+    "authors": [
+        {
+            "name": "Bob Wezelman",
+            "email": "bob.wezelman@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rapidez\\AmastyPromoBanners\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rapidez\\AmastyPromoBanners\\AmastyPromoBannersServiceProvider"
+            ]
+        }
+    }
+}
