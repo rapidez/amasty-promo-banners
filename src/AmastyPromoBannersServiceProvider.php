@@ -14,10 +14,10 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
     public function boot()
     {
         $this
-        ->loadViews()
-        ->publishViews()
-        ->configureModule()
-        ->registerBannerComponent();
+            ->loadViews()
+            ->publishViews()
+            ->configureModule()
+            ->registerBannerComponent();
     }
 
     public function registerBannerComponent() : self
