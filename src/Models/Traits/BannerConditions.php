@@ -17,7 +17,7 @@ trait BannerConditions
         $foundBanners = new Collection();
 
         foreach($banners->get() as $banner) {
-            if(empty($banner->cats) || in_array($categoryId, explode(',',$banner->cats))) {
+            if (empty($banner->cats) || in_array($categoryId, explode(',',$banner->cats))) {
                 $foundBanners->push($banner->id);
             }
         }
@@ -28,7 +28,7 @@ trait BannerConditions
     {
         $positions = config('amastypromobanners.locations');
         return self::whereRaw("FIND_IN_SET(?, show_on_products) > 0", [$sku])
-            ->whereRaw("FIND_IN_SET(?, banner_position) > 0", [$positions[$location]]);
+        ->whereRaw("FIND_IN_SET(?, banner_position) > 0", [$positions[$location]]);
     }
 
     public static function getForLocationAndProductRules($location, $product) : Builder
