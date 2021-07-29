@@ -15,7 +15,7 @@ class BannersDirective
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\Support\Htmlable|\Closure|string
      */
-    public function render($location, $rule)
+    public function render($location, $rule = '')
     {
         return Cache::rememberForever(
             'banners.'.md5(serialize(func_get_args())),
@@ -24,7 +24,7 @@ class BannersDirective
 
                 switch (gettype($rule)) {
                     case 'string':
-                        $banners = Banner::getForLocationAndSku($location, $rule);
+                        $banners = $rule !== '' ? Banner::getForLocationAndSku($location, $rule) : Banner::getForLocation($location);
                         break;
                     case 'object':
                         $banners = Banner::getForLocationAndProductRules($location, $rule);
@@ -37,7 +37,7 @@ class BannersDirective
                         break;
                 }
 
-                if (!isset($positions[$location]) || !$banners->count()) {
+                if (is_null($banners) || !isset($positions[$location]) || !$banners->count()) {
                     return;
                 }
 

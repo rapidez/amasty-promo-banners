@@ -13,8 +13,15 @@ trait BannerConditions
     public static function getForLocationAndCategory($location, $categoryId) : Builder
     {
         $positions = config('amastypromobanners.locations');
-        return self::whereRaw("FIND_IN_SET(?, banner_position) > 0", [$positions[$location]])
-            ->whereRaw("FIND_IN_SET(?, cats) > 0", [$categoryId]);
+        $banners = self::whereRaw("FIND_IN_SET(?, banner_position) > 0", [$positions[$location]]);
+        $foundBanners = new Collection();
+
+        foreach($banners->get() as $banner) {
+            if(empty($banner->cats) || in_array($categoryId, explode(',',$banner->cats))) {
+                $foundBanners->push($banner->id);
+            }
+        }
+        return Banner::whereIn('id', $foundBanners);
     }
 
     public static function getForLocationAndSku($location, $sku) : Builder
@@ -37,6 +44,13 @@ trait BannerConditions
         }
 
         return Banner::whereIn('id', $foundBanners);
+    }
+
+    public static function getForLocation($location)
+    {
+        $positions = config('amastypromobanners.locations');
+        $banners = self::whereRaw('FIND_IN_SET(?, banner_position) >0', [$positions[$location]]);
+        return $banners;
     }
 
 
