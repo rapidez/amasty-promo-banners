@@ -3,11 +3,8 @@
 namespace Rapidez\AmastyPromoBanners;
 
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
-use Rapidez\AmastyPromoBanners\Models\Scopes\WithAmastyPromoBannersScope;
 use Rapidez\AmastyPromoBanners\ViewDirectives\BannersDirective;
-use TorMorten\Eventy\Facades\Eventy;
 
 class AmastyPromoBannersServiceProvider extends ServiceProvider
 {
@@ -19,7 +16,7 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
             ->registerBannerComponent();
     }
 
-    public function registerBannerComponent() : self
+    public function registerBannerComponent(): self
     {
         Blade::directive('banners', function ($expression) {
             return "<?php echo app('banners-directive')->render($expression)?>";
@@ -30,14 +27,14 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function loadViews() : self
+    public function loadViews(): self
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'AmastyPromoBanners');
 
         return $this;
     }
 
-    public function publishViews() : self
+    public function publishViews(): self
     {
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/AmastyPromoBanners'),
@@ -46,7 +43,7 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function configureModule() : self
+    public function configureModule(): self
     {
         $this->publishes([
             __DIR__.'/../config/amastypromobanners.php' => config_path('amastypromobanners'),

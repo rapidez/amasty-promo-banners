@@ -62,6 +62,7 @@ class BannersDirective
         $timezone = Config::getCachedByPath('general/locale/timezone');
         $from = Carbon::createFromFormat('Y-m-d H:i:s', $banner->from_date, $timezone);
         $to = Carbon::createFromFormat('Y-m-d H:i:s', $banner->to_date, $timezone);
+
         return Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($timezone), $timezone)->between($from, $to);
     }
 }

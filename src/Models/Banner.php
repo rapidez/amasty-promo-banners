@@ -21,7 +21,7 @@ class Banner extends Model
     {
         parent::boot();
 
-        static::addGlobalScope(new IsActiveScope);
+        static::addGlobalScope(new IsActiveScope());
         static::addGlobalScope('default', function (Builder $builder) {
             $builder->orderBy('sort_order', 'asc');
         });
