@@ -44,7 +44,7 @@ class BannersDirective
                 $html = '';
                 foreach ($banners->get() as $banner) {
                     if ($this->checkSchedulingDate($banner)) {
-                        $html .= view('AmastyPromoBanners::promobanners.partials.'.$banner->banner_type, ['banner' => $banner])->render();
+                        $html .= view('AmastyPromoBanners::promobanners.partials.'.$banner->banner_type, compact('banner', 'location'))->render();
                     }
                 }
 
