@@ -38,7 +38,7 @@ class BannersDirective
                 }
 
                 if (is_null($banners) || !isset($positions[$location]) || !$banners->count()) {
-                    return;
+                    return false;
                 }
 
                 $html = '';
