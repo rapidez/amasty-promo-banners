@@ -2,10 +2,11 @@
     "name": "rapidez/amasty-promo-banners",
     "description": "Rapidez Amasty Promo Banners",
     "require": {
-        "php": "^7.4",
-        "illuminate/database": "^8.0",
-        "illuminate/support": "^8.0",
-        "illuminate/view": "^8.0"
+        "php": "^8.0|^8.1",
+        "illuminate/database": "^9.0",
+        "illuminate/support": "^9.0",
+        "illuminate/view": "^9.0",
+        "rapidez/core": "~0.54"
     },
     "authors": [
         {
@@ -14,9 +15,6 @@
         }
     ],
     "minimum-stability": "dev",
-    "repositories": [
-
-    ],
     "autoload": {
         "psr-4": {
             "Rapidez\\AmastyPromoBanners\\": "src"
