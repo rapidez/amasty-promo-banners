@@ -3,17 +3,21 @@
 namespace Rapidez\AmastyPromoBanners;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Rapidez\AmastyPromoBanners\Models\Banner;
 use Rapidez\AmastyPromoBanners\ViewDirectives\BannersDirective;
 
 class AmastyPromoBannersServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViews()
+        $this
+            ->loadViews()
             ->publishViews()
             ->configureModule()
-            ->registerBannerComponent();
+            ->registerBannerComponent()
+            ->getAmongProductsBannersOnCategory();
     }
 
     public function registerBannerComponent(): self
@@ -52,6 +56,19 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
             __DIR__.'/../config/amastypromobanners.php',
             'amastypromobanners'
         );
+
+        return $this;
+    }
+
+    public function getAmongProductsBannersOnCategory(): self
+    {
+        View::composer('rapidez::category.overview', function ($view) {
+            $banners = Banner::getForLocationAndCategory('among_products', config('frontend.category.entity_id'))
+                ->get(['after_n_product_row', 'banner_img', 'banner_link', 'banner_title'])
+                ->keyBy('after_n_product_row');
+
+            config(['frontend.category.banners' => $banners]);
+        });
 
         return $this;
     }
