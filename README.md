@@ -18,18 +18,34 @@ php artisan vendor:publish --provider="Rapidez\Core\RapidezServiceProvider" --ta
 ## Usage
 
 ### Categories
+
 Add `@banners('category_page', $category->entity_id)` where you'd like to display your banners, add the specified location to make sure the banner shows up on the location you've specified in magento backend. The possible locations are listed at [locations](#Locations). For categories, you can just pass the category id in the blade directive to make sure it only displays for the selected categories in the Magento backend.
 
 ### Products
+
 #### With product rules
-If you want the banners to be rendered conditional(based on magento rules), you can pass the product as object to the banners directive:
+
+If you want the banners to be rendered conditional (based on magento rules), you can pass the product as object to the banners directive:
 `@banners('prod_page', $product)`.
 This will display the banners for all products that passes the conditions.
 
 #### Without product rules
+
 If you just want to show the banner on some product pages, you can pass the SKU in the banners directive:
 `@banners('prod_page', $product->sku)`
 This will only display the banner for the specified SKUs in the Magento backend.
+
+### Among category products
+
+Until [this PR](https://github.com/appbaseio/reactivesearch/pull/1932) is merged and released you'll need to install the fork:
+```
+yarn add 'https://gitpkg.now.sh/api/pkg?url=royduin/reactivesearch/packages/vue&commit=patch-4&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20run%20build-es&scripts.build-es=nps%20build.es'
+```
+
+Just add the view within the `renderItem` slot in `listing/partials/item.blade.php` and add `count` to the `slot-scope`
+```
+@include('AmastyPromoBanners::promobanners.amongproducts')
+```
 
 ## Views
 
@@ -39,6 +55,7 @@ php artisan vendor:publish --provider="Rapidez\AmastyPromoBanners\AmastyPromoBan
 ```
 
 ## Locations
+
 These are the locations that are configurable in the magento backend for each banner.
 Backend label | code key
 --- | ---
@@ -59,4 +76,4 @@ Among Category Products | `among_products`
 
 ## Note
 
-Not all features are implemented yet! For example: cart rules, show on search.
+Not all features are implemented yet! For example: cart rules, show on search, etc.
