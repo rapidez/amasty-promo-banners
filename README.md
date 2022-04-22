@@ -44,7 +44,7 @@ yarn add 'https://gitpkg.now.sh/api/pkg?url=royduin/reactivesearch/packages/vue&
 
 Just add the view within the `renderItem` slot in `listing/partials/item.blade.php` and add `count` to the `slot-scope`
 ```
-@include('AmastyPromoBanners::promobanners.amongproducts')
+@includeWhen(config('frontend.category'), 'AmastyPromoBanners::promobanners.amongproducts')
 ```
 
 ## Views
