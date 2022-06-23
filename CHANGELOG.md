@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.3.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.3.1...master)
+
+## [0.3.1](https://github.com/org/repo/compare/0.3.0...0.3.1) - 2022-06-23
+
+### Fixed
+
+- Config filename fix (57d9007)
 
 ## [0.3.0](https://github.com/org/repo/compare/0.2.0...0.3.0) - 2022-04-19
 
