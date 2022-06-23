@@ -50,7 +50,7 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
     public function configureModule(): self
     {
         $this->publishes([
-            __DIR__.'/../config/amastypromobanners.php' => config_path('amastypromobanners'),
+            __DIR__.'/../config/amastypromobanners.php' => config_path('amastypromobanners.php'),
         ]);
         $this->mergeConfigFrom(
             __DIR__.'/../config/amastypromobanners.php',
