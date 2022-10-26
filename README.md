@@ -37,12 +37,7 @@ This will only display the banner for the specified SKUs in the Magento backend.
 
 ### Among category products
 
-Until [this PR](https://github.com/appbaseio/reactivesearch/pull/1932) is merged and released you'll need to install the fork:
-```
-yarn add 'https://gitpkg.now.sh/api/pkg?url=royduin/reactivesearch/packages/vue&commit=patch-4&scripts.postinstall=yarn%20install%20--ignore-scripts%20%26%26%20yarn%20run%20build-es&scripts.build-es=nps%20build.es'
-```
-
-Just add the view within the `renderItem` slot in `listing/partials/item.blade.php` and add `count` to the `slot-scope`
+Just add the view within the `renderItem` slot in `listing/partials/item.blade.php`
 ```
 @includeWhen(config('frontend.category'), 'AmastyPromoBanners::promobanners.amongproducts')
 ```
