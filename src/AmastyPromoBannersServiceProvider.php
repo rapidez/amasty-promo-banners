@@ -64,7 +64,7 @@ class AmastyPromoBannersServiceProvider extends ServiceProvider
     {
         View::composer('rapidez::category.overview', function ($view) {
             $banners = Banner::getForLocationAndCategory('among_products', config('frontend.category.entity_id'))
-                ->get(['after_n_product_row', 'banner_img', 'banner_link', 'banner_title'])
+                ->get(['after_n_product_row', 'banner_img', 'banner_link', 'banner_title', 'n_product_width'])
                 ->keyBy('after_n_product_row');
 
             config(['frontend.category.banners' => $banners]);
