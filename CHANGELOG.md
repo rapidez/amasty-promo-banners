@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.3.2...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.3.3...master)
+## [0.3.3](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.3.3) - 2023-07-04
+
+### Fixed
+
+- Use url helpers (#10)
+
 ## [0.3.2](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.3.2) - 2023-06-16
 
 ### Fixed
