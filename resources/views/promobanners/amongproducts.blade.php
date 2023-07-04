@@ -2,7 +2,7 @@
     <component
         v-if="key = Object.keys(config.category.banners).find(key => key.split(',').find(splittedKey => splittedKey == count))"
         :is="config.category.banners[key].banner_link ? 'a' : 'div'"
-        :href="config.category.banners[key].banner_link"
+        :href="config.category.banners[key].banner_link | url"
         class="flex-none w-1/2 sm:w-1/3 lg:w-1/4 px-1 my-1 relative"
     >
         <img :src="'{{ config('rapidez.media_url') }}/amasty/ampromobanners/' + config.category.banners[key].banner_img" alt="">

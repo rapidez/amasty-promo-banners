@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between flex-wrap">
             <div class="w-0 flex-1 flex items-center">
                 <p class="ml-3 font-medium text-white truncate">
-                    <a href="{{ $banner->banner_link }}">
+                    <a href="{{ url($banner->banner_link) }}">
                         <span>
                             @lang($banner->banner_title)
                         </span>
