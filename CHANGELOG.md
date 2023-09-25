@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.3.3...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.3.4...master)
+## [0.3.4](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.3.4) - 2023-09-22
+
+### Added
+
+- Laravel 10 support (f0cc698)
+
 ## [0.3.3](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.3.3) - 2023-07-04
 
 ### Fixed
