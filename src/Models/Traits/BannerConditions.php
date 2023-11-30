@@ -12,7 +12,7 @@ trait BannerConditions
 
     public static function getForLocationAndCategory($location, $categoryId): Builder
     {
-        $positions = config('amastypromobanners.locations');
+        $positions = config('rapidez.amastypromobanners.locations');
         $banners = self::whereRaw('FIND_IN_SET(?, banner_position) > 0', [$positions[$location]]);
         $foundBanners = new Collection();
 
@@ -27,7 +27,7 @@ trait BannerConditions
 
     public static function getForLocationAndSku($location, $sku): Builder
     {
-        $positions = config('amastypromobanners.locations');
+        $positions = config('rapidez.amastypromobanners.locations');
 
         return self::whereRaw('FIND_IN_SET(?, show_on_products) > 0', [$sku])
         ->whereRaw('FIND_IN_SET(?, banner_position) > 0', [$positions[$location]]);
@@ -35,7 +35,7 @@ trait BannerConditions
 
     public static function getForLocationAndProductRules($location, $product): Builder
     {
-        $positions = config('amastypromobanners.locations');
+        $positions = config('rapidez.amastypromobanners.locations');
         $banners = self::selectRaw('id, actions_serialized')->whereRaw('FIND_IN_SET(?, banner_position) > 0', [$positions[$location]]);
         $foundBanners = new Collection();
         foreach ($banners->get() as $banner) {
@@ -50,7 +50,7 @@ trait BannerConditions
 
     public static function getForLocation($location)
     {
-        $positions = config('amastypromobanners.locations');
+        $positions = config('rapidez.amastypromobanners.locations');
         $banners = self::whereRaw('FIND_IN_SET(?, banner_position) >0', [$positions[$location]]);
 
         return $banners;
