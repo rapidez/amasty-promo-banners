@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.3.4...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.4.0...master)
+## [0.4.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.4.0) - 2023-12-01
+
+### Changed
+
+- Move config file to Rapidez folder (#11)
+
 ## [0.3.4](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.3.4) - 2023-09-22
 
 ### Added
