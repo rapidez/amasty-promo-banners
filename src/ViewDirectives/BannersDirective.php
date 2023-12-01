@@ -20,7 +20,7 @@ class BannersDirective
         return Cache::rememberForever(
             'banners.'.md5(serialize(func_get_args())),
             function () use ($location, $rule) {
-                $positions = config('amastypromobanners.locations');
+                $positions = config('rapidez.amastypromobanners.locations');
 
                 switch (gettype($rule)) {
                     case 'string':
