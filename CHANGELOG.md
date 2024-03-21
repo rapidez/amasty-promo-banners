@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.4.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.5.0...master)
+## [0.5.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.5.0) - 2024-03-21
+
+### Added
+
+- Rapidez v2 support (#13)
+
 ## [0.4.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.4.0) - 2023-12-01
 
 ### Changed
