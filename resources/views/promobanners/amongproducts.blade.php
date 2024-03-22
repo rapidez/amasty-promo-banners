@@ -5,12 +5,13 @@
         :href="config.category.banners[key].banner_link | url"
         class="flex-none w-1/2 sm:w-1/3 lg:w-1/4 px-1 my-1 relative"
     >
-        <img :src="'{{ config('rapidez.media_url') }}/amasty/ampromobanners/' + config.category.banners[key].banner_img" alt="">
+        <img
+            :src="'{{ config('rapidez.media_url') }}/amasty/ampromobanners/' + config.category.banners[key].banner_img"
+            :alt="config.category.banners[key].banner_title ?? ''">
         <div
-            v-if="config.category.banners[key].banner_title"
+            v-if="config.category.banners[key].html_text"
             class="absolute inset-0 text-center text-white font-bold"
-        >
-            @{{ config.category.banners[key].banner_title }}
-        </div>
+            v-html="config.category.banners[key].html_text ?? ''"
+        ></div>
     </component>
 @endif
