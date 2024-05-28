@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/0.5.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/2.0.0...master)
+## [2.0.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/2.0.0) - 2024-05-28
+
+### Added
+
+- Laravel 11 support (#14)
+
 ## [0.5.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/0.5.0) - 2024-03-21
 
 ### Added
