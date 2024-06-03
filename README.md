@@ -42,6 +42,16 @@ Just add the view within the `renderItem` slot in `listing/partials/item.blade.p
 @includeWhen(config('frontend.category'), 'AmastyPromoBanners::promobanners.amongproducts')
 ```
 
+You should also use `getListingSize(...)` as the page size in your `products.blade.php`, for example like so:
+
+```blade
+<reactive-list
+    [...]
+    :size="getListingSize(isNaN(parseInt(listingSlotProps.pageSize)) ? 10000 : parseInt(listingSlotProps.pageSize))"
+    [...]
+>
+```
+
 ## Views
 
 If you need to change the views you can publish them with:
