@@ -47,7 +47,7 @@ You should also use `getListingSize(...)` as the page size in your `products.bla
 ```blade
 <reactive-list
     [...]
-    :size="getListingSize(isNaN(parseInt(listingSlotProps.pageSize)) ? 10000 : parseInt(listingSlotProps.pageSize))"
+    :size="getListingSize(parseInt(listingSlotProps.pageSize))"
     [...]
 >
 ```
