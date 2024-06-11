@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/2.0.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/2.1.0...master)
+## [2.1.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/2.1.0) - 2024-06-11
+
+### Added
+
+- Make banners repeat every page & add functions for calculating page size (#15)
+
 ## [2.0.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/2.0.0) - 2024-05-28
 
 ### Added
