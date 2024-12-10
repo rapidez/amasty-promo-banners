@@ -63,6 +63,6 @@ class BannersDirective
         $from = Carbon::createFromFormat('Y-m-d H:i:s', $banner->from_date, $timezone);
         $to = Carbon::createFromFormat('Y-m-d H:i:s', $banner->to_date, $timezone);
 
-        return Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now()->setTimezone($timezone), $timezone)->between($from, $to);
+        return Carbon::now()->setTimezone($timezone)->between($from, $to);
     }
 }
