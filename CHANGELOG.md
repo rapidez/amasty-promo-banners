@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/2.2.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-promo-banners/compare/2.2.1...master)
+## [2.2.1](https://github.com/rapidez/amasty-promo-banners/releases/tag/2.2.1) - 2025-04-10
+
+### Fixed
+
+- Handle the Laravel requirement through the core requirement (5f581f4)
+
 ## [2.2.0](https://github.com/rapidez/amasty-promo-banners/releases/tag/2.2.0) - 2024-12-10
 
 ### Added
