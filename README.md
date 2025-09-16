@@ -37,19 +37,32 @@ This will only display the banner for the specified SKUs in the Magento backend.
 
 ### Among category products
 
-Just add the view within the `renderItem` slot in `listing/partials/item.blade.php`
+> [!NOTE]
+> To make these work properly you will currently need to modify your listing component and possibly your toolbar accordingly. Make sure to read on.
+
+Just add the view at the bottom of `listing/partials/item.blade.php`:
 ```
 @includeWhen(config('frontend.category'), 'AmastyPromoBanners::promobanners.amongproducts')
 ```
 
-You should also use `getListingSize(...)` as the page size in your `products.blade.php`, for example like so:
+Note that, to currently make this work, you will need to modify the hitsPerPage in your listing. If you haven't already, extend the `Listing.vue` component with the following:
+
+```js
+computed: {
+    hitsPerPage() {
+        return [{
+            label: '',
+            value: this.$root.getListingSize(12),
+            default: true,
+        }]
+    },
+}
+```
+
+You can replace the `12` with how many items you actually want to show per page, and you can add multiple items if you want more options shown in the hits-per-page. If you only want just the one like above, you will also probably want to overwrite the `vendor/rapidez/listing/partials/toolbar/pages.blade.php` view to remove the selection box:
 
 ```blade
-<reactive-list
-    [...]
-    :size="getListingSize(parseInt(listingSlotProps.pageSize))"
-    [...]
->
+<ais-hits-per-page :items="listingSlotProps.hitsPerPage"/>
 ```
 
 ## Views

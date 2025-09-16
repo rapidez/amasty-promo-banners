@@ -1,3 +1,5 @@
+import 'Vendor/rapidez/core/resources/js/vue'
+
 function getListingExtra(from, to) {
     if (!config.category) {
         return 0
